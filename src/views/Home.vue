@@ -1,16 +1,4 @@
 <template>
-  <div>
-    Burgers
-    <div class="wrapper">
-    <Burger v-for="burger in burgers"
-            v-bind:burger="burger" 
-            v-bind:key="burger.name"/>
-  </div>
-  </div>
-  <div id="map" v-on:click="addOrder">
-    click here.
-  </div>
-
   <header>
     <div class="head">
       <img id="pic" src="https://www.damhert.be/content/recipes/271/BURGERWebsite_Hoofding.jpg?v=1" alt="header" title="Header">
@@ -18,43 +6,21 @@
     </div>
   </header>
   <main>
-    <section class="burgare">
+    <section class="burgarmeny">
       <h2>Välj Burgare</h2>
       <p>Här väljer du burgare</p>
-      <div class="wrapper">
-        <div class="a">
-          <h3>Originalburgare</h3>
-          <img src="https://www.max.se/contentassets/7283b5a0bf324ba99d7fa7e0caf5ae7f/product_max-original.png" alt="Burgare" title="Originalburgare" style="width: 400px">
-          <h4>Inehåll:</h4>
-          <ul>
-            <li>Stora mängder <span id="ingrediens">fett </span></li>
-            <li>Sallad</li>
-            <li>Lök</li>
-          </ul>
-        </div>
 
-        <div class="b">
-          <h3>Friscoburgare</h3>
-          <img src="https://www.max.se/contentassets/093fc9201de04f648ea20afee581bafe/product_frisco-cheese-n-bacon.png" alt="Burgare" title="Friscoburgare" style="width: 400px;">
-          <h4>Inehåll:</h4>
-          <ul>
-            <li>Bröd</li>
-            <li>Sallad</li>
-            <li>Massvis med<span id="ingrediens"> Lök </span></li>
-          </ul>
-        </div>
-        <div class="c">
-          <h3>Dubbel Friscoburgare</h3>
-          <img src="https://www.max.se/contentassets/80851e9c275642b3834b216a880941ff/product_dubbel-friscoburgare.png" alt="Burgare" title="Dubbel Friscoburgare" style="width: 400px;">
-          <h4>Inehåll:</h4>
-          <ul>
-            <li>Dubbel <span id="ingrediens">Bröd </span></li>
-            <li>Dubbel Sallad</li>
-            <li>Dubbel Bacon</li>
-          </ul>
-        </div>
-      </div>
+
+
+    <div class="wrapper">
+    <Burger v-for="burger in burgers"
+            v-bind:burger="burger" 
+            v-bind:key="burger.name"/>
+    </div>
     </section>
+    <div id="map" v-on:click="addOrder">
+      click here.
+    </div>
 
     <section class="order">
       <h2>Kundinformation</h2>
@@ -89,16 +55,16 @@
       <h4>Kön</h4>
       <div>
         <input type="radio" id="man" name="kön" value="man">
-        <label for="huey">Man</label>
+        <label>Man</label>
       </div>
       <div>
         <input type="radio" id="kvinna" name="kön" value="kvinna">
-        <label for="dewey">Kvinna</label>
+        <label>Kvinna</label>
       </div>
       <div>
         <input type="radio" id="ib" name="kön" value="ickebinär"
                checked>
-        <label for="louie">Ickebinär</label>
+        <label>Ickebinär</label>
       </div>
       <div id="button">
         <button type="submit">
@@ -196,19 +162,20 @@ export default {
     font-size: 36px;
     margin-top: -250px;
   }
-  .burgare {
+  .burgarmeny {
 
     color: #ffaf6e;
     background-color:#20124d;
 
-    padding: 10px 10px 500px 20px;
- 
+    padding: 10px 0px 450px 20px;
+    border: 3px dashed #eaf90a;
+
   }
   .wrapper {
     display: grid;
     height: 100px;
-    grid-template-columns: auto auto auto;
-    border: 3px dashed #eaf90a;
+    grid-template-columns: 33% 33% 33%;
+    margin: 0px 0px 0px -20px;
   }
   .a {
     grid-column: 1 ;

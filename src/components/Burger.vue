@@ -1,12 +1,12 @@
 <template>
   <section class="burgare">
 
-  <h3>{{burger.name}} {{ burger.kCal }}</h3>
+  <h3>{{burger.name}} {{ burger.kCal }} kCal</h3>
   <img v-bind:src="burger.img" alt="Burgare" style="width: 400px">
   <h4>Inehåll:</h4>
   <ul>
-    <li>{{burger.gluten}}</li>
-    <li>{{burger.lactose}}</li>
+    <li>Gluten {{burger.gluten}}</li>
+    <li>Laktos {{burger.lactose}}</li>
   </ul>
   </section>
 </template>
@@ -27,7 +27,7 @@ export default {
   color: #ffaf6e;
   background-color:#20124d;
 
-  padding: 10px 10px 500px 20px;
+  padding: 0px 10px 0px 20px;
 
 }
 .wrapper {
