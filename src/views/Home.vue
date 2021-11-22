@@ -115,7 +115,7 @@ export default {
   data: function () {
     return {
             burgers: menu.menu,
-      orderedBurgers:'',
+      orderedBurgers:{},
        location: {x:0,
                   y:0},
            fullname:'',
@@ -130,7 +130,7 @@ export default {
     },
 
     addToOrder: function (event) {
-      this.orderedBurgers[event.name] = event.amount;
+      this.orderedBurger[event.name] = event.amount;
       console.log("event.amount: " + event.amount);
     },
     setLocation: function (event) {
@@ -150,7 +150,7 @@ export default {
                Email: this.email,
           Betalmetod: this.betalmetod,
                  sex: this.valt},
-          orderItems: this.orderedBurgers
+          orderItems: this.orderedBurger
       });
 
       alert("Ordern har skickats")
