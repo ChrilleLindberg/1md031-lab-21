@@ -1,0 +1,25 @@
+{
+  "menu": [
+    {
+      "name": "Originalburgare",
+      "url": "https://www.max.se/contentassets/7283b5a0bf324ba99d7fa7e0caf5ae7f/product_max-original.png",
+      "kCal": 295,
+      "lactose": false,
+      "gluten": true
+    },
+    {
+      "name": "Friscoburgare",
+      "url": "https://www.max.se/contentassets/093fc9201de04f648ea20afee581bafe/product_frisco-cheese-n-bacon.png",
+      "kCal": 605,
+      "lactose": true,
+      "gluten": false
+    },
+    {
+      "name": "Dubbel Friscoburgare",
+      "url": "https://www.max.se/contentassets/80851e9c275642b3834b216a880941ff/product_dubbel-friscoburgare.png",
+      "kCal": 872,
+      "lactose": true,
+      "gluten": true
+    }
+  ]
+}

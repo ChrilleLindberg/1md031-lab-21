@@ -1,12 +1,12 @@
 body {
 
     margin: 50px 50px 50px 50px;
-    font-family: helvetica neue thin;
+    font-family: helvetica neue thin, serif;
 }
 .head {
     overflow:hidden;
-    margin: 50px 0px -60px 0px;
-    padding: 10px 10px 60px 0px;
+    margin: 50px 0 -60px 0;
+    padding: 10px 10px 60px 0;
 
 }
 #pic{
@@ -45,14 +45,14 @@ body {
     grid-column: 3;
 }
 #ingrediens {
-    font-family: helvetica neue;
+    font-family: helvetica neue, serif;
     text-transform: uppercase;
 }
 .order {
     color: #20124d;
     background-color:#f2776e;
-    margin: 10px 0px 0px 0px;
-    padding: 10px 10px 0px 20px;
+    margin: 10px 0 0 0;
+    padding: 10px 10px 0 20px;
     border: 3px dashed #eaf90a;
 }
 #button{

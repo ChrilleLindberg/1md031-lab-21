@@ -1,14 +1,22 @@
 <template>
   <section class="burgare">
 
-  <h3>{{burger.name}} {{ burger.kCal }} kCal</h3>
-  <img v-bind:src="burger.img" alt="Burgare" style="width: 400px">
+    <h3 v-bind:key=burger.name>{{burger.name}} <span class="thin">{{ burger.kCal }} kCal </span></h3>
+  <img v-bind:src="burger.url" alt="Burgare" style="width: 400px">
   <h4>Inehåll:</h4>
   <ul>
-    <li>Gluten {{burger.gluten}}</li>
-    <li>Laktos {{burger.lactose}}</li>
+    <li v-if="burger.lactose"> Innehåller <span class="varning"> Laktos</span></li>
+    <li v-if="burger.gluten"> Innehåller <span class="varning"> Gluten</span></li>
   </ul>
+
+    <div class="center">
+      <button v-on:click ="remove">-</button>  {{amountOrdered}}
+
+      <button v-on:click="add">+</button>
+
+    </div>
   </section>
+
 </template>
 
 <script>
@@ -16,6 +24,34 @@ export default {
   name: 'Burger',
   props: {
     burger: Object
+  },
+
+  data: function () {
+    return {
+      amountOrdered: 0,
+    }
+  },
+
+  methods: {
+    add: function (){
+      this.amountOrdered++;
+      this.$emit('orderBurger',
+          {name: this.burger.name,
+           amount: this.amountOrdered
+          }
+          );
+    },
+    remove: function(){
+      if(this.amountOrdered > 0 ){
+        this.amountOrdered--;
+      }
+      this.$emit('orderedBurger',
+          {name: this.burger.name,
+        amount: this.amountOrdered
+      },
+      )
+
+    },
   }
 }
 </script>
@@ -27,21 +63,16 @@ export default {
   color: #ffaf6e;
   background-color:#20124d;
 
-  padding: 0px 10px 0px 20px;
-
+  padding: 0 5px 20px 5px;
 }
-.wrapper {
-  display: grid;
-  height: 100px;
-  grid-template-columns: 33% 33% 33%;
+.varning{
+  font-weight: bolder;
 }
-.a {
-  grid-column: 1 ;
+.thin{
+  font-size: smaller;
+  font-weight: lighter;
 }
-.b {
-  grid-column: 2;
-}
-.c {
-  grid-column: 3;
+.center{
+  margin: 0 5px 0 50px;
 }
 </style>
