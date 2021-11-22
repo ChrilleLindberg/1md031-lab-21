@@ -5,7 +5,7 @@
         #{{ key }}: {{ order.orderItems }}<br>
                     {{order.details.Namn}}<br>
                     {{order.details.Email}}<br>
-                    {{order.details.Kön}}<br>
+                    {{order.details.sex}}<br>
                     {{order.details.Betalmetod}}
       </div>
       <button v-on:click="clearQueue">Clear Queue</button>

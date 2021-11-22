@@ -35,7 +35,7 @@ export default {
   methods: {
     add: function (){
       this.amountOrdered++;
-      this.$emit('orderBurger',
+      this.$emit('orderedBurger',
           {name: this.burger.name,
            amount: this.amountOrdered
           }

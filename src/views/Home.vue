@@ -2,7 +2,7 @@
   <header>
     <div class="head">
       <img id="pic" src="https://www.damhert.be/content/recipes/271/BURGERWebsite_Hoofding.jpg?v=1" alt="header" title="Header">
-      <div class="center"><h1>Välkommen till MAXade burgare</h1></div>
+        <div class="center"><h1>Välkommen till MAXade burgare</h1></div>
     </div>
   </header>
   <main>
@@ -10,15 +10,12 @@
       <h2>Välj Burgare</h2>
       <p>Här väljer du burgare</p>
 
-
-
-    <div class="wrapper">
-    <Burger class="box" v-for="burger in burgers"
+        <div class="wrapper">
+          <Burger class="box" v-for="burger in burgers"
             v-bind:burger="burger" 
             v-bind:key="burger.name"
             v-on:orderedBurger="addToOrder($event)"/>
-
-    </div>
+        </div>
     </section>
 
     <section class="order">
@@ -26,7 +23,6 @@
       <p>Här anger du nödvändig information</p>
       <h3>Leveransinformation</h3>
 
-      {{orderedBurgers}}
       <p>
         <label for="name">Fullständigt namn</label><br>
         <input type="text" id="name" v-model="fullname" required="required" placeholder="För- och efter namn">
@@ -39,9 +35,7 @@
       <h3>Välj utkörningsadress</h3>
       <p> Markera på önskad plats på kartan</p>
 
-
       <div id = "mapbox">
-
         <div id="map" v-on:click="setLocation">
           <div v-bind:style="{left: location.x + 'px',top: location.y + 'px',}">T
           </div>
@@ -58,7 +52,6 @@
         </select>
       </p>
 
-
       <h4>Kön</h4>
       <div>
         <input type="radio" id="man" v-model="valt" value="man">
@@ -69,14 +62,12 @@
         <label>Kvinna</label>
       </div>
       <div>
-        <input type="radio" id="ib" v-model="valt" value="ickebinär"
-               checked>
+        <input type="radio" id="ib" v-model="valt" value="ickebinär" checked>
         <label>Ickebinär</label>
       </div>
 
-
       <div id="button">
-        <button v-on:click="markDone" >
+        <button v-on:click="markDone(key)" >
           <img src="https://e7.pngegg.com/pngimages/936/444/png-clipart-computer-icons-icon-design-order-icon-cdr-angle.png" title="beställning" style="width: 40px;" alt="Beställning">
           Bekräfta beställning
         </button>
@@ -130,7 +121,7 @@ export default {
            fullname:'',
               email:'',
          betalmetod:'Swish',
-                Kön:''
+                sex:''
     }
   },
   methods: {
@@ -139,8 +130,8 @@ export default {
     },
 
     addToOrder: function (event) {
-     return this.orderedBurgers[event.name] = event.amount;
-     /* console.log("event.amount: " + event.amount);*/
+      this.orderedBurgers[event.name] = event.amount;
+      console.log("event.amount: " + event.amount);
     },
     setLocation: function (event) {
       var offset = {x: event.currentTarget.getBoundingClientRect().left,
@@ -151,13 +142,14 @@ export default {
 
     markDone:function() {
 
+      console.log( this.orderedBurgers);
       socket.emit("addOrder", {
         orderId: this.getOrderNumber(),
         details:{loc: this.location,
                 Namn: this.fullname,
                Email: this.email,
           Betalmetod: this.betalmetod,
-                 Kön: this.valt},
+                 sex: this.valt},
           orderItems: this.orderedBurgers
       });
 
