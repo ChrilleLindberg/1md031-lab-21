@@ -115,7 +115,7 @@ export default {
   data: function () {
     return {
             burgers: menu.menu,
-      orderedBurgers:{},
+      orderedBurger:{},
        location: {x:0,
                   y:0},
            fullname:'',

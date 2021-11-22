@@ -11,7 +11,7 @@
       <button v-on:click="clearQueue">Clear Queue</button>
     </div>
     <div id="dots">
-        <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.x + 'px', top: order.details.y + 'px'}" v-bind:key="'dots' + key">
+        <div v-for="(order, key) in orders" v-bind:style="{ left: order.details.loc.x + 'px', top: order.details.loc.y + 'px'}" v-bind:key="'dots' + key">
           {{ key }}
         </div>
     </div>
@@ -46,7 +46,7 @@ export default {
   position: absolute;
   z-index: 2;
   color:black;
-  background: rgba(255,255,255, 0.5);
+  background: rgba(255,255,255, 0.9);
   padding: 1em;
 }
 #dots {
