@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="/style.css">
+    <title>MAXade burgare</title>
+    <meta charset="utf-8"/>
+    
+</head>
+<body>
+    <header>
+        <div class="head">
+        <img id="pic" src="https://www.damhert.be/content/recipes/271/BURGERWebsite_Hoofding.jpg?v=1" alt="header" title="Header">
+            <div class="center"><h1>Välkommen till MAXade burgare</h1></div>
+        </div>
+    </header>
+<main>
+    <section class="burgare">
+        <h2>Välj Burgare</h2>
+        <p>Här väljer du burgare</p>
+        <div class="wrapper">
+        <div class="a">
+            <h3>Originalburgare</h3>
+            <img src="https://www.max.se/contentassets/7283b5a0bf324ba99d7fa7e0caf5ae7f/product_max-original.png" alt="Burgare" title="Originalburgare" style="width: 400px">
+            <h4>Inehåll:</h4>
+            <ul>
+                <li>Stora mängder <span id="ingrediens">fett </span></li>
+                <li>Sallad</li>
+                <li>Lök</li>
+            </ul>
+        </div>
+
+        <div class="b">
+            <h3>Friscoburgare</h3>
+            <img src="https://www.max.se/contentassets/093fc9201de04f648ea20afee581bafe/product_frisco-cheese-n-bacon.png" alt="Burgare" title="Friscoburgare" style="width: 400px;">
+            <h4>Inehåll:</h4>
+            <ul>
+                <li>Bröd</li>
+                <li>Sallad</li>
+                <li>Massvis med<span id="ingrediens"> Lök </span></li>
+            </ul>
+        </div>
+        <div class="c">
+            <h3>Dubbel Friscoburgare</h3>
+            <img src="https://www.max.se/contentassets/80851e9c275642b3834b216a880941ff/product_dubbel-friscoburgare.png" alt="Burgare" title="Dubbel Friscoburgare" style="width: 400px;">
+            <h4>Inehåll:</h4>
+            <ul>
+                <li>Dubbel <span id="ingrediens">Bröd </span></li>
+                <li>Dubbel Sallad</li>
+                <li>Dubbel Bacon</li>
+            </ul>
+        </div>
+        </div>
+    </section>
+
+    <section class="order">
+        <h2>Kundinformation</h2>
+        <p>Här anger du nödvändig information</p>
+        <h3>Leveransinformation</h3>
+        <p>
+            <label for="name">Fullständigt namn</label><br>
+            <input type="text" id="name" name="n" required="required" placeholder="För- och efter namn">
+        </p>
+        <p>
+            <label for="email">Email</label><br>
+            <input type="text" id="email" name="e" placeholder="Epostadress">
+        </p>
+        <p>
+            <label for="adress">Adress</label><br>
+            <input type="text" id="adress" name="g" placeholder="Gatunamn">
+        </p>
+        <p>
+            <label for="adressnr"></label><br>
+            <input type="number" id="adressnr" name="gnr" placeholder="Husnummer">
+        </p>
+        <p>
+            <label for="betalning">Betalningsmetod</label><be>
+            <select id="betalning" name="bet">
+                <option>Swish</option>
+                <option>Natura</option>
+                <option>Kort</option>
+                <option>Faktura</option>
+                <option>Kontant</option>
+            </select>
+        </p>
+        <h4>Kön</h4>
+        <div>
+            <input type="radio" id="man" name="kön" value="man">
+            <label for="huey">Man</label>
+        </div>
+        <div>
+            <input type="radio" id="kvinna" name="kön" value="kvinna">
+            <label for="dewey">Kvinna</label>
+        </div>
+        <div>
+            <input type="radio" id="ib" name="kön" value="ickebinär"
+                   checked>
+            <label for="louie">Ickebinär</label>
+        </div>
+        <div id="button";>
+        <button type="submit">
+            <img src="https://wolfcoding.com/wp-content/uploads/2021/06/food-delivery.jpg" title="beställning" style="width: 40px;">
+            Bekräfta beställning
+        </button>
+        </div>
+    </section>
+</main>
+    <hr>
+<footer>
+    &copy; MAXade burgare
+</footer
+</body>
+</html>
